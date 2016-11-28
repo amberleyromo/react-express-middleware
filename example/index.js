@@ -1,5 +1,3 @@
-var sharedContext = require('shared-context');
-var browserify = require('browserify-middleware');
 var express = require('express');
 var ejs = require('consolidate').ejs;
 var routes = require('./routes');

@@ -5,12 +5,12 @@ module.exports = React.createClass({
 	render: function () {
 		return (
 			<div className="page-wrapper">
-        <header>
-          <p>Header info and such</p>
-        </header>
+				<header>
+					<p>Header info and such</p>
+				</header>
 				{this.props.children}
 				<footer>
-          <p>Footer info and such.</p>
+					<p>Footer info and such.</p>
 				</footer>
 			</div>
 		);

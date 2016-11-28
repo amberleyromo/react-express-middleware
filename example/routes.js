@@ -4,7 +4,7 @@ var reactExpressMiddleware = require('../');
 
 /* View handlers */
 var howdy = require('./handlers/howdy');
-var adieu = require('./handlers/adieu');
+var adieu = require('./handlers/adieu/index.jsx');
 
 module.exports = function (app) {
 	app.use(reactExpressMiddleware({
@@ -15,5 +15,5 @@ module.exports = function (app) {
 		res.redirect('/howdy');
 	});
 	app.get('/howdy', howdy);
-  app.get('/adieu', adieu);
+	app.get('/adieu', adieu);
 };
