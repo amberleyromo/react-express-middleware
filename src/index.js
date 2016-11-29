@@ -6,6 +6,7 @@ export default function reactExpressMiddlewareGenerator (options = {}) {
 	options.template = options.template || 'index';
 	options.key = options.key || 'content';
 	options.serverRenderMethod = options.serverRenderMethod || ReactDOMServer.renderToString;
+	console.log('options.serverRenderMethod', options.serverRenderMethod);
 
 	return function reactExpressMiddleware (req, res, next) {
 		res.renderReactComponent = function renderReactComponent (Component, store, done) {

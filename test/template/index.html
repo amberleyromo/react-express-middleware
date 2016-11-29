@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" class="fonts-supported">
+	<head>
+		<title>Test Doc</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	</head>
+	<body>
+		<div id="app-container"><%- content %></div>
+		<script>
+			var vee = window.vee || {};
+			vee.context = <%- JSON.stringify(context) %>;
+			vee.config = <%- JSON.stringify(config) %>;
+		</script>
+	</body>
+</html>

@@ -4,6 +4,7 @@ var setPrototypeOf = require('setprototypeof');
 
 export default function reactExpressMiddlewareGenerator (options = {}) {
 	options.clientRenderMethod = options.clientRenderMethod || ReactDOM.render;
+	console.log('options.clientRenderMethod', options.clientRenderMethod);
 
 	// Get the element, defaults to body
 	options.element = (function (el) {
