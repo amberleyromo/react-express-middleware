@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var setPrototypeOf = require('setprototypeof');
 
-export default function reactExpressMiddlewareGenerator (options = {}) {
+export default function reactExpressMiddlewareGenerator (options = {}, callback) {
 	options.clientRenderMethod = options.clientRenderMethod || ReactDOM.render;
 	console.log('options.clientRenderMethod', options.clientRenderMethod);
 
