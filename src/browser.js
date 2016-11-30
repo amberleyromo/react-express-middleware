@@ -41,7 +41,7 @@ export default function reactExpressMiddlewareGenerator (options = {}) {
 			}
 
 			// Render template with string
-			return options.clientRenderMethod(Component, options.element, done);
+			options.clientRenderMethod(Component, options.element, done);
 		};
 		next();
 	};

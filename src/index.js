@@ -29,7 +29,7 @@ export default function reactExpressMiddlewareGenerator (options = {}) {
 			}
 
 			// Render template with string
-			return res.render(options.template, {
+			res.render(options.template, {
 				[options.key]: options.serverRenderMethod(Component)
 			}, done);
 		};
