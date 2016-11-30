@@ -1,10 +1,12 @@
 var React = require('react');
 
 module.exports = React.createClass({
-	displayName: 'Foo',
+	displayName: 'Container',
 	render: function () {
 		return (
-			<div className="foo" />
+			<div id="app-container">
+				<p>Hi there</p>
+			</div>
 		);
 	}
 });
