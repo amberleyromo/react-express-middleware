@@ -45,6 +45,29 @@ router.get('/', function (req, res) {
 </html>
 ```
 
+### Support for jsx
+
+The module supports passing in a single container component (above) or jsx (below).
+
+```javascript
+var router = require('express')();
+var reactExpressMiddleware = require('react-express-middleware');
+var ReactComponent = require('./component.jsx');
+var PageWrapper = require('./wrapper.jsx');
+
+router.use(reactExpressMiddleware({
+	element: 'app'
+}));
+router.get('/', function (req, res) {
+	var RenderComponent = (
+	  <PageWrapper>
+	    <ReactComponent foo="bar" />
+	  </PageWrapper>
+	);
+	res.renderReactComponent(ReactComponent);
+});
+```
+
 **Note:** The module does not specify a react dependency so you can depend on whatever react version you want.  We only require greater than React 0.14.0
 
 ## Passing data to your React components

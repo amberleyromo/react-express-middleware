@@ -4,8 +4,9 @@ module.exports = React.createClass({
 	displayName: 'Container',
 	render: function () {
 		return (
-			<div id="app-container">
-				<p>Hi there</p>
+			<div>
+				<h1>Basic headline.</h1>
+				<p>Basic paragraph.</p>
 			</div>
 		);
 	}
