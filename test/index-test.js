@@ -28,29 +28,34 @@ describe('React Express Middleware', function () {
 				assert.equal(data.content, '<div><h1>Basic headline.</h1><p>Basic paragraph.</p></div>');
 			}
 		};
-		// 2. run reactExpressMiddleware (server)
+		// 2. Run middleware (server)
 		renderMiddleware({}, res, function () {
-			done();
 		});
+
+		// 3. Call render
+		res.renderReactComponent(Container, {});
+		done();
 	});
 
 	it('should render passed Component (client)', function (done) {
-		// 1. Generate middleware with 'shallow' as serverRenderMethod
+		// 1. Generate middleware with 'shallow' as clientRenderMethod
 		var renderMiddleware = clientRenderMiddleware({
-			element: 'app-container',
 			clientRenderMethod: function (Component, element) {
-				assert.equal(element, 'app-container');
+				assert.equal(element, window.document.body);
 
 				var wrapper = shallow(Component).html();
 				assert.equal(wrapper, '<div><h1>Basic headline.</h1><p>Basic paragraph.</p></div>');
-
 				return wrapper;
 			}
 		});
 
-		// 2. run reactExpressMiddleware (server)
-		renderMiddleware({}, {}, function () {
-			done();
+		var res = {};
+		// 2. Run middleware (client)
+		renderMiddleware({}, res, function () {
 		});
+
+		// 3. Call render
+		res.renderReactComponent(Container, {});
+		done();
 	});
 });
